@@ -1,65 +1,234 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useEffect, useState } from 'react';
+import { Work_Sans } from 'next/font/google';
+
+const workSans = Work_Sans({ 
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600'],
+});
+
+export default function ComingSoon() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className={`relative min-h-screen w-full overflow-hidden bg-black ${workSans.className}`}>
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0">
+        {/* Primary orb - deep purple to magenta */}
+        <div 
+          className="absolute w-[800px] h-[800px] rounded-full blur-[140px] opacity-30 animate-drift-1"
+          style={{
+            background: 'radial-gradient(circle, rgba(139, 0, 255, 0.6) 0%, rgba(255, 0, 128, 0.3) 40%, transparent 70%)',
+            top: '20%',
+            left: '10%',
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        
+        {/* Secondary orb - electric blue to cyan */}
+        <div 
+          className="absolute w-[700px] h-[700px] rounded-full blur-[130px] opacity-25 animate-drift-2"
+          style={{
+            background: 'radial-gradient(circle, rgba(0, 102, 255, 0.5) 0%, rgba(0, 255, 255, 0.25) 40%, transparent 70%)',
+            bottom: '10%',
+            right: '15%',
+          }}
+        />
+        
+        {/* Accent orb - violet */}
+        <div 
+          className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-20 animate-drift-3"
+          style={{
+            background: 'radial-gradient(circle, rgba(147, 51, 234, 0.4) 0%, rgba(126, 34, 206, 0.2) 40%, transparent 70%)',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+
+        {/* Mouse follower - subtle glow */}
+        <div 
+          className="absolute w-[400px] h-[400px] rounded-full blur-[100px] opacity-15 transition-all duration-[1500ms] ease-out pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(255, 0, 255, 0.5) 0%, transparent 60%)',
+            left: `${mousePosition.x - 200}px`,
+            top: `${mousePosition.y - 200}px`,
+          }}
+        />
+      </div>
+
+      {/* Content - centered */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
+        
+        {/* Minimal icon */}
+        <div className="mb-16 animate-float-gentle">
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500 via-fuchsia-500 to-cyan-500 opacity-60 blur-md animate-pulse-glow" />
+            <div className="absolute inset-0 rounded-full border border-white/20 backdrop-blur-sm" />
+            <div className="absolute inset-3 rounded-full bg-black/40" />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* Main text */}
+        <h1 className="text-8xl md:text-9xl font-extralight mb-8 text-center tracking-wider animate-reveal">
+          <span className="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent animate-shimmer">
+            COMING SOON
+          </span>
+        </h1>
+
+        {/* Mysterious subtitle */}
+        <p className="text-lg md:text-xl text-white/40 text-center font-extralight tracking-[0.3em] animate-reveal-delay">
+          SOMETHING IS BREWING
+        </p>
+
+        {/* Minimal animated line */}
+        <div className="mt-16 w-32 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent animate-line-pulse" />
+
+      </div>
+
+      <style jsx>{`
+        @keyframes drift-1 {
+          0%, 100% {
+            transform: translate(0, 0);
+          }
+          25% {
+            transform: translate(50px, -80px);
+          }
+          50% {
+            transform: translate(-30px, -40px);
+          }
+          75% {
+            transform: translate(40px, 60px);
+          }
+        }
+
+        @keyframes drift-2 {
+          0%, 100% {
+            transform: translate(0, 0);
+          }
+          25% {
+            transform: translate(-60px, 50px);
+          }
+          50% {
+            transform: translate(40px, -70px);
+          }
+          75% {
+            transform: translate(-50px, -30px);
+          }
+        }
+
+        @keyframes drift-3 {
+          0%, 100% {
+            transform: translate(-50%, -50%) scale(1);
+          }
+          33% {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+          66% {
+            transform: translate(-50%, -50%) scale(0.9);
+          }
+        }
+
+        @keyframes shimmer {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
+        @keyframes float-gentle {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @keyframes pulse-glow {
+          0%, 100% {
+            opacity: 0.4;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.8;
+            transform: scale(1.1);
+          }
+        }
+
+        @keyframes reveal {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+          }
+        }
+
+        @keyframes line-pulse {
+          0%, 100% {
+            opacity: 0.3;
+            transform: scaleX(1);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scaleX(1.5);
+          }
+        }
+
+        .animate-drift-1 {
+          animation: drift-1 30s ease-in-out infinite;
+        }
+
+        .animate-drift-2 {
+          animation: drift-2 35s ease-in-out infinite;
+        }
+
+        .animate-drift-3 {
+          animation: drift-3 25s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+          background-size: 200% 200%;
+          animation: shimmer 8s ease-in-out infinite;
+        }
+
+        .animate-float-gentle {
+          animation: float-gentle 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+          animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        .animate-reveal {
+          animation: reveal 1.2s ease-out forwards;
+        }
+
+        .animate-reveal-delay {
+          opacity: 0;
+          animation: reveal 1.2s ease-out 0.4s forwards;
+        }
+
+        .animate-line-pulse {
+          animation: line-pulse 3s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
