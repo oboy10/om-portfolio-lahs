@@ -87,7 +87,7 @@ export default function ComingSoon() {
 
         {/* Mysterious subtitle */}
         <p className="text-lg md:text-xl text-white/40 text-center font-extralight tracking-[0.3em] animate-reveal-delay">
-          SOMETHING IS BREWING
+          Check back in a bit
         </p>
 
         {/* Minimal animated line */}
