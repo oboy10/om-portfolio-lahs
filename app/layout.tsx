@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Om Anand Khaunte - Coming Soon",
-  description: "Building something great. Stay tuned.",
+  description: "Building something cool. Stay tuned.",
 };
 
 export default function RootLayout({
