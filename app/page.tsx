@@ -65,13 +65,13 @@ export default function ComingSoon() {
       <div className="relative z-10 text-center space-y-8 px-8 max-w-5xl">
         {/* Coming Soon Text */}
         <div className="space-y-4">
-          <div className="overflow-hidden">
-            <h1 className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-black tracking-tighter leading-[0.9] animate-slide-up">
+          <div className="overflow-hidden pb-6">
+            <h1 className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-bold tracking-tighter leading-[0.9] animate-slide-up">
               Coming
             </h1>
           </div>
           <div className="overflow-hidden">
-            <h1 className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-black tracking-tighter leading-[0.9] animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <h1 className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-bold tracking-tighter leading-[0.9] animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-gradient">
                 Soon
               </span>
@@ -112,37 +112,37 @@ export default function ComingSoon() {
       </div>
 
       {/* Bottom Links */}
-<div className="fixed bottom-8 left-0 right-0 z-40 animate-fade-in" style={{ animationDelay: '1.1s' }}>
-  <div className="flex justify-center gap-8">
-    <a
-      href="https://github.com/oboy10"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-sm font-bold text-gray-500 hover:text-white transition-colors duration-300 relative group"
-    >
-      GITHUB
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
-    </a>
-    
-    <a
-      href="https://devpost.com/okhaunte"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-sm font-bold text-gray-500 hover:text-white transition-colors duration-300 relative group"
-    >
-      DEVPOST
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
-    </a>
-    
-    <a
-      href="mailto:okhaunte@gmail.com"
-      className="text-sm font-bold text-gray-500 hover:text-white transition-colors duration-300 relative group"
-    >
-      EMAIL
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
-    </a>
-  </div>
-</div>
+      <div className="fixed bottom-8 left-0 right-0 z-40 animate-fade-in" style={{ animationDelay: '1.1s' }}>
+        <div className="flex justify-center gap-8">
+          <a
+            href="https://github.com/oboy10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-bold text-gray-500 hover:text-white transition-colors duration-300 relative group"
+          >
+            GITHUB
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
+          </a>
+          
+          <a
+            href="https://devpost.com/okhaunte"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-bold text-gray-500 hover:text-white transition-colors duration-300 relative group"
+          >
+            DEVPOST
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
+          </a>
+          
+          <a
+            href="mailto:okhaunte@gmail.com"
+            className="text-sm font-bold text-gray-500 hover:text-white transition-colors duration-300 relative group"
+          >
+            EMAIL
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover:w-full transition-all duration-300" />
+          </a>
+        </div>
+      </div>
 
       <style jsx>{`
         @keyframes slide-up {
