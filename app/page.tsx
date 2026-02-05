@@ -89,7 +89,7 @@ export default function ComingSoon() {
         {/* Tagline */}
         <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
           <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
-            Building something cool. Stay tuned.
+            Building something cool. Releasing ~2028-2029
           </p>
         </div>
 
