@@ -16,7 +16,7 @@ const marqueeItems: { label: string; href: string }[] = [
   { label: 'LAHS', href: '#about' },
   { label: 'OSHA 10', href: '/certifications/osha-10' },
   { label: 'ONSHAPE', href: '/certifications/onshape' },
-  { label: 'NC3 MECHATRONICS', href: '#certifications' },
+  { label: 'NC3 MECHATRONICS', href: '/certifications/nc3-mechatronics' },
   { label: 'DESIGN', href: '#work' },
   { label: 'ENGINEERING', href: '#work' },
   { label: 'CLASS OF 2029', href: '#about' },
@@ -114,6 +114,7 @@ export default function Portfolio() {
       year: '2025-26',
       image: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
       description: 'NC3 Mechatronics certification.',
+      href: '/certifications/nc3-mechatronics',
     },
   ];
 
