@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Om Anand Khaunte - Coming Soon",
-  description: "Building something cool. Stay tuned.",
+  title: "Om Anand Khaunte — Design Portfolio",
+  description:
+    "Om's Design Portfolio — Robotics 1 projects and certifications at Los Altos High School (Class of 2029).",
 };
 
 export default function RootLayout({
